@@ -1,8 +1,15 @@
-$(function() {
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="../jquery.contextmenu.js"></script>
+    <link rel="stylesheet" href="../jquery.contextmenu.css">
+    <script>
+      $(function() {
         $('#mythingy').contextPopup({
           title: 'My Popup Menu',
           items: [
-            {label:'Some Item',     icon:'icons/shopping-basket.png',             action:function() { window.open("http://portal.mackenzie.br/"); } },
+            {label:'Some Item',     icon:'icons/shopping-basket.png',             action:function() { alert('clicked 1') } },
             {label:'Another Thing', icon:'icons/receipt-text.png',                action:function() { alert('clicked 2') } },
             {label:'Blah Blah',     icon:'icons/book-open-list.png',              action:function() { alert('clicked 3') } },
             null, // divider
@@ -15,4 +22,14 @@ $(function() {
           ]
         });
       });
-      
+    </script>
+  </head>
+  <body style="background-color:#000000; color:#ffffff; font-family:arial,sans-serif">
+
+    <div id="mythingy" style="width:500px; height: 500px; margin: 10px; border:2px dashed #666666; padding:6px">
+      right click in this box to show custom context menu 
+    </div>
+
+    right click out of the box to show the standard browser menu (if you're trying to view-source, right click here)
+  </body>
+</html>
